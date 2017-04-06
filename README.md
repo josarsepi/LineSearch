@@ -10,4 +10,8 @@ Future Dev:
 
 * Have a single regex built from the config list that can be compiled at the time the class is called up.  May increase the speed of searches.
 
+* Make it work with lists, strings, or dicts.
+
+* Enable alternative outputs.
+
 * Need to double check the use of str() and need to make it pythonic.
