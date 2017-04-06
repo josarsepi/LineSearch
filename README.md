@@ -8,6 +8,6 @@ It definately needs some optimization.
 
 Future Dev:
 
-Have a single regex built from the config list that can be compiled at the time the class is called up.  May increase the speed of searches.
+* Have a single regex built from the config list that can be compiled at the time the class is called up.  May increase the speed of searches.
 
-Need to double check the use of str() and need to make it pythonic.
+* Need to double check the use of str() and need to make it pythonic.
