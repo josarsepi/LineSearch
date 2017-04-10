@@ -8,6 +8,7 @@ def managed(func):
 		end = timeit.default_timer()
 		tot = end - start
 		print(func.__name__ + " total time: " + str(tot))
+		self.tottime = self.tottime + tot
 		return retval
 	return wrappedfunc
 
@@ -32,6 +33,8 @@ class findinline:
 		self.output = output
 		self.isother = isother
 		self.newline = newline
+		self.totline = 0
+		self.tottime = 0
 		self.littelist = None
 		self.biglist = None
 		self.newline = None
@@ -44,10 +47,9 @@ class findinline:
 			self.findlist.insert(place,neweach)
 			
 		comreg = '|'.join(self.findlist)
-		self.comreg = 'r' + "'.*" + str(comreg) + ".*'"
+		self.comreg = 'r' + "'" + str(comreg) + "'"
 		self.regex = re.compile(str(self.comreg))
 	
-	@managed
 	def makenew(self):
 		
 		import os
@@ -65,8 +67,9 @@ class findinline:
 				betterlog.write(str(record))
 			
 		betterlog.close
+		print("Total Lines: " + str(self.totline))
+		print("Total time: " + str(self.tottime))
 		
-	@managed
 	def searchfiles(self,filelst,findlst):
 		import os
 		
@@ -74,9 +77,9 @@ class findinline:
 		
 		print("Createing BIGLIST from LITTLELISTS.")
 		
-		# print("Here's your isother statement: " + str(self.isother))
+		print("Here's your isother statement: " + str(self.isother))
 		
-		if str(self.isother) == None:
+		if self.isother == None:
 			for each in filelst:
 				self.littlelist = self.finder(each,self.findlist)
 				for those in self.littlelist:
@@ -105,14 +108,18 @@ class findinline:
 		with open(file2read) as f:
 			rowcount = 0
 			matchcount = 0
-			for line in f:
+			
+			line = f.readline()
+			while line is not None:
 				rowcount = rowcount + 1
 				nugget = re.search(self.regex,line)
-				if nugget != None:
+				if nugget == None:
 					matchcount = matchcount + 1
 					putter = str(line)
 					littlelist.append(putter)
+				line = f.readline()
 			
+			self.totline = self.totline + rowcount
 			length = len(littlelist)
 			print("Done creating or updating a LITTLELIST with " + str(length) + " objects.")
 			print(rowcount)
@@ -142,11 +149,11 @@ class findinline:
 					matchcount = matchcount + 1
 					putter = row
 					littlelist.append(putter)
-
+			
+			self.totline = self.totline + rowcount
 			length = len(littlelist)
 			print("Done creating or updating a LITTLELIST with " + str(length) + " objects.")
 			print("Total Rows in " + str(path2file) + " : " + rowcount)
 			print("Total Matches in " + str(path2file) + " : " + matchcount)
 			
 		return littlelist
-
