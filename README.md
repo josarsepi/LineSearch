@@ -1,5 +1,7 @@
 # LineSearch 
 
+Currently this has only been tested in Python 3.6
+
 Searches each line of the files contained in a list for a specific list of terms.  If a term is found on a line, it adds that line to a new file.
 
 Terms should be standard text or regular expressions.  DO NOT use the preceding #r'# or #b'# prefixes.  If searching for an IP address or other special characters use brackets[] to wrap special characters.
