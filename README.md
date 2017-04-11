@@ -8,7 +8,7 @@ Terms should be standard text or regular expressions.  DO NOT use the preceding 
 
 For example: 192[.]168[.]0[.]199
 
-Currently supports csv and txt (log) files.
+Supports csv and txt (log) files.
 
 # Instructions:
 
