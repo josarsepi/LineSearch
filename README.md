@@ -12,9 +12,9 @@ Currently supports csv and txt (log) files.
 
 1. To execute, modify the finderconf.py file.
 2. Open the python interpretter.
-3. '>>>' from findinline import findinline
-4. '>>>' finder = findinline()
-5. '>>>' finder.makenew()
+3. '>>> from findinline import findinline'
+4. '>>> finder = findinline()'
+5. '>>> finder.makenew()'
 
 -----
 
