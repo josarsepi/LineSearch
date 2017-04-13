@@ -19,8 +19,8 @@ Supports csv and txt (log) files.
 
 Future Dev:
 
-* Enable alternative outputs.
+* Enable alternative inputs/outputs (to make this more modular.)
 
 * Need to double check the use of str() and need to make it pythonic.
 
-* Add a driver to make execution easier.
+* Add logging.
