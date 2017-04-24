@@ -22,5 +22,7 @@ Future Dev:
 * Enable alternative inputs/outputs (to make this more modular.)
 
 * Need to double check the use of str() and need to make it pythonic.
+ 
+-----
 
-* Add logging.
+Added the ability to change encoding.

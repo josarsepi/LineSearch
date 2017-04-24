@@ -26,7 +26,9 @@ class findinline:
 		from finderconf import filelist
 		from finderconf import findlist
 		from finderconf import output
+		from finderconf import encoding
 		
+		self.encoding = encoding
 		self.filelist = filelist
 		self.findlist = findlist
 		self.output = output
@@ -112,7 +114,7 @@ class findinline:
 		
 		#with BufferedWriter(FileIO(self.output,'wb'),buffer_size=409600) as outf:
 
-		with open(file2read, 'r', encoding='utf-8') as f:
+		with open(file2read, 'r', encoding=self.encoding) as f:
 			rowcount = 0
 			matchcount = 0
 				
