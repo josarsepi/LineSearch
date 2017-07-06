@@ -8,4 +8,4 @@ filelist = ['..\\dumpfile.csv']
 encoding = None
 
 # findlist is capable of being individual regular expressions.  Be aware that some characters will require a \ or {} to mark them as literals.
-findlist = ['Process', 'http://m/', 'SENSENET']
+findlist = ['Process', 'http://m/', 'SENSEORNOT']
